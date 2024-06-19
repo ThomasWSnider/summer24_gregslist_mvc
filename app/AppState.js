@@ -1,5 +1,7 @@
 import { Car } from './models/Car.js'
+import { House } from "./models/House.js"
 import { EventEmitter } from './utils/EventEmitter.js'
+import { generateId } from "./utils/GenerateId.js"
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
@@ -65,7 +67,32 @@ class ObservableAppState extends EventEmitter {
     }),
   ]
 
-
+  houses = [
+    new House({
+      id: generateId(),
+      year: 1979,
+      address: 'Super real Address',
+      bedrooms: 4,
+      bathrooms: 2,
+      sqft: 2311,
+      price: 500000,
+      description: 'Buy our house!',
+      imgUrl: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2V8ZW58MHx8MHx8fDA%3D',
+      damaged: false
+    }),
+    new House({
+      id: generateId(),
+      year: 2004,
+      address: 'Dope Street',
+      bedrooms: 2,
+      bathrooms: 1,
+      sqft: 4,
+      price: 134000,
+      description: 'Buy my house!',
+      imgUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdXNlfGVufDB8fDB8fHww',
+      damaged: true
+    }),
+  ]
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
