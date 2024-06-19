@@ -1,5 +1,9 @@
 /* BASIC STYLES HERE */
 
+.home-link {
+  text-decoration: none;
+}
+
 .car-card {
   border: 3px solid;
   border-radius: 15px;
@@ -16,6 +20,19 @@
   border-radius: 15px;
   background-color: rgb(215, 212, 226);
   border: 3px solid black;
+}
+
+.house-card {
+  border: 3px solid black;
+  border-radius: 15px;
+}
+
+.house-card img {
+  border-radius: 15px 0 0 15px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 
